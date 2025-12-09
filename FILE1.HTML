@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hotel Room Booking Form</title>
+  <style>
+    :root{
+      --border:#2b2b2b;
+      --label:#333;
+      --input-bg:#fafafa;
+    }
+    body{
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: #fff;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:40px;
+      color:var(--label);
+    }
+    .booking-card{
+      border:3px solid var(--border);
+      max-width:720px;
+      width:100%;
+      padding:28px;
+      box-sizing:border-box;
+    }
+    h1{
+      text-align:center;
+      margin:0 0 20px;
+      font-size:28px;
+      font-weight:700;
+    }
+    form{
+      display:grid;
+      grid-template-columns: 200px 1fr;
+      grid-row-gap:14px;
+      grid-column-gap:18px;
+      align-items:center;
+    }
+    label{
+      justify-self:start;
+      padding-left:6px;
+      font-size:16px;
+    }
+    .full-row{
+      grid-column:1 / -1;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea{
+      width:100%;
+      padding:10px 12px;
+      border:1.5px solid #cfcfcf;
+      border-radius:4px;
+      background:var(--input-bg);
+      font-size:15px;
+      box-sizing:border-box;
+    }
+    select{
+      appearance:none;
+      -webkit-appearance:none;
+      -moz-appearance:none;
+      background-image:linear-gradient(45deg, transparent 50%, #666 50%),
+                        linear-gradient(135deg, #666 50%, transparent 50%),
+                        linear-gradient(to right, #eee, #eee);
+      background-position: calc(100% - 18px) calc(1em + 2px), calc(100% - 13px) calc(1em + 2px), 100% 0;
+      background-size: 6px 6px, 6px 6px, 2.5em 2.5em;
+      background-repeat: no-repeat;
+      padding-right:36px;
+    }
+    textarea{
+      min-height:110px;
+      resize:vertical;
+    }
+    .small-input{
+      width:100px;
+    }
+    /* spacing to visually mirror the sample */
+    .spacer{
+      height:8px;
+      grid-column:1 / -1;
+    }
+  </style>
+</head>
+<body>
+  <div class="booking-card" role="region" aria-label="Hotel room booking form">
+    <h1>Hotel Room Booking Form</h1>
+
+    <form autocomplete="on" novalidate>
+      <label for="fullname">Full Name:</label>
+      <input id="fullname" name="fullname" type="text" placeholder="Your Name" required />
+
+      <label for="email">Email:</label>
+      <input id="email" name="email" type="email" placeholder="Your Email" required />
+
+      <label for="phone">Phone:</label>
+      <input id="phone" name="phone" type="tel" placeholder="Phone Number" />
+
+      <label for="checkin">Check-in Date:</label>
+      <input id="checkin" name="checkin" type="text" placeholder="dd - mm - yyyy" />
+
+      <label for="checkout">Check-out Date:</label>
+      <input id="checkout" name="checkout" type="text" placeholder="dd - mm - yyyy" />
+
+      <label for="roomtype">Room Type:</label>
+      <select id="roomtype" name="roomtype" aria-label="Room type">
+        <option value="single" selected>Single Room</option>
+        <option value="double">Double Room</option>
+        <option value="suite">Suite</option>
+      </select>
+
+      <label for="guests">Number of Guests:</label>
+      <input id="guests" name="guests" type="text" placeholder="" />
+
+      <div class="spacer"></div>
+
+      <label class="full-row" for="requests">Special Requests:</label>
+      <textarea id="requests" name="requests" class="full-row" placeholder="Enter Your Requests"></textarea>
+    </form>
+  </div>
+</body>
+</html>
